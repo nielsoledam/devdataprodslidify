@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My First Slidify Deck</title>
+  <title>Shiny App for the votes of the Danish general election 2011</title>
   <meta charset="utf-8">
-  <meta name="description" content="My First Slidify Deck">
+  <meta name="description" content="Shiny App for the votes of the Danish general election 2011">
   <meta name="author" content="Niels Ole Dam">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>My First Slidify Deck</h1>
+    <h1>Shiny App for the votes of the Danish general election 2011</h1>
     <h2>Dev Data Prod, Coursera, Mach 2015</h2>
     <p>Niels Ole Dam<br/></p>
   </hgroup>
@@ -43,13 +43,15 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Overview of this Slidify Deck</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+<li>Front Page</li>
+<li>Overview of this Slidify Deck (this page)</li>
+<li>Introduction</li>
+<li>Sample Map</li>
+<li>Get in touch</li>
 </ol>
 
   </article>
@@ -58,10 +60,46 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Introduction</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>The Shiny App was made using the brilliant mapDK package made by Sebastian Barfort.</p>
+
+<p>It is basically just demonstrating a subset of what this nice package is able to acomplish.</p>
+
+<p>On the next two pages will be shown a sample map, generated directly by R in Slidify and the code that generated the map.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Sample Map</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(mapDK)
+name &lt;- &quot;socialdemokratiet&quot;
+mapDK(values = &quot;stemmer&quot;, id = &quot;id&quot;,
+      data = subset(votes, navn == name),
+      detail = &quot;polling&quot;, show_missing = FALSE,
+      guide.label = paste(&quot;Votes \n&quot;, name, &quot; (pct)&quot;, sep=&quot;&quot;))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Get in touch</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For more information please contact:
+<a href="mailto:test@test.dk">test@test.dk</a></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -72,14 +110,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Overview of this Slidify Deck'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Introduction'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Sample Map'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Get in touch'>
+         4
       </a>
     </li>
   </ul>

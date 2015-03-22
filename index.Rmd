@@ -1,5 +1,5 @@
 ---
-title       : My First Slidify Deck
+title       : Shiny App for the votes of the Danish general election 2011
 subtitle    : Dev Data Prod, Coursera, Mach 2015
 author      : Niels Ole Dam
 job         : 
@@ -11,15 +11,43 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Overview of this Slidify Deck
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+1. Front Page
+2. Overview of this Slidify Deck (this page)
+3. Introduction
+4. Sample Map
+5. Get in touch
 
 --- .class #id 
 
-## Slide 2
+## Introduction
+
+The Shiny App was made using the brilliant mapDK package made by Sebastian Barfort.
+
+It is basically just demonstrating a subset of what this nice package is able to acomplish.
+
+On the next two pages will be shown a sample map, generated directly by R in Slidify and the code that generated the map.
+
+--- .class #id 
+
+## Sample Map
+
+```{r, warning=FALSE}
+library(mapDK)
+name <- "socialdemokratiet"
+mapDK(values = "stemmer", id = "id",
+      data = subset(votes, navn == name),
+      detail = "polling", show_missing = FALSE,
+      guide.label = paste("Votes \n", name, " (pct)", sep=""))
+```
+
+--- .class #id 
+
+## Get in touch
+
+For more information please contact:
+test@test.dk
 
 
 
